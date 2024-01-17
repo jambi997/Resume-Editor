@@ -1,6 +1,6 @@
 import React from "react";
 
-const LangaugeHandler = (props) => {
+const LanguageHandler = (props) => {
   const { formik } = props;
   return (
     <div class="border-2 border-gray-500 rounded-md w-full p-2 text-gray-700">
@@ -60,4 +60,4 @@ const LangaugeHandler = (props) => {
   );
 };
 
-export default LangaugeHandler;
+export default LanguageHandler;

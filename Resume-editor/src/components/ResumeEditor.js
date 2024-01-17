@@ -1,12 +1,13 @@
 import { useFormik } from "formik";
 import React from "react";
-import LangaugeHandler from "./LangaugeHandler";
 import SkillHandler from "./SkillHandler";
 import PDFRenderer from "./PDFRenderer";
 import Button from "../utils/Button";
 import { PDFViewer } from "@react-pdf/renderer";
 import github from "../pictures/githubicon2.png";
 import linkedin from "../pictures/linkedicon.png";
+import LanguageHandler from "./LanguageHandler";
+import { differentData } from "./ExampleData";
 
 var defaultInitialValues = {
   name: "Default name",
@@ -29,7 +30,7 @@ var defaultInitialValues = {
 const ResumeEditor = () => {
   const [resumeState, setResumeState] = React.useState("editor"); // ["editor", "preview", "download"
   const formik = useFormik({
-    initialValues: defaultInitialValues,
+    initialValues: differentData, //defaultInitialValues,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     },
@@ -151,7 +152,7 @@ const ResumeEditor = () => {
               <SkillHandler formik={formik} />
             </div>
             <div class="col-span-4">
-              <LangaugeHandler formik={formik} />
+              <LanguageHandler formik={formik} />
             </div>
             <div class="col-span-4 float-right">
               <button type="submit">Submit</button>
