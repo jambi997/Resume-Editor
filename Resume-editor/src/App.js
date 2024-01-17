@@ -1,10 +1,17 @@
 import logo from "./logo.svg";
 import "./App.css";
-import ResumeEditor from "./ResumeEditor";
+import ResumeEditor from "./components/ResumeEditor";
+// import { Font } from '@react-pdf/renderer';
+// Font.register({
+//   family: 'Open Sans',
+//   src: 'https://fonts.gstatic.com/s/opensans/v22/mem8YaGs126MiZpBA-UFVZ0e.ttf',
+// });
+
+
 
 function App() {
   return (
-    <div class="bg-green-900 h-screen ">
+    <div class="h-screen ">
       <div class="container mx-auto pt-5">
         <ResumeEditor />
       </div>
