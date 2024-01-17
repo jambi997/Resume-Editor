@@ -5,7 +5,6 @@ import SkillHandler from "./SkillHandler";
 import PDFRenderer from "./PDFRenderer";
 import Button from "../utils/Button";
 import { PDFViewer } from "@react-pdf/renderer";
-import self from "../pictures/self.png";
 import github from "../pictures/githubicon2.png";
 import linkedin from "../pictures/linkedicon.png";
 
