@@ -94,3 +94,5 @@ export var differentData= {
     summary:
       "I am a dedicated data scientist with a passion for turning data into actionable insights. Experienced in developing and deploying machine learning models to solve real-world problems. Strong background in statistical analysis and data visualization."
   };
+
+ 

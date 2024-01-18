@@ -3,11 +3,13 @@ import React from "react";
 import SkillHandler from "./SkillHandler";
 import PDFRenderer from "./PDFRenderer";
 import Button from "../utils/Button";
-import { PDFViewer } from "@react-pdf/renderer";
 import github from "../pictures/githubicon2.png";
 import linkedin from "../pictures/linkedicon.png";
 import LanguageHandler from "./LanguageHandler";
-import { differentData } from "./ExampleData";
+import { differentData, marciData } from "./ExampleData";
+import LinkHandler from "./LinkHandler";
+import EducationHandler from "./EducationHandler";
+import WorkExperienceHandler from "./WorkExperienceHandler";
 
 var defaultInitialValues = {
   name: "Default name",
@@ -30,9 +32,10 @@ var defaultInitialValues = {
 const ResumeEditor = () => {
   const [resumeState, setResumeState] = React.useState("editor"); // ["editor", "preview", "download"
   const formik = useFormik({
-    initialValues: differentData, //defaultInitialValues,
+    initialValues: differentData,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
+      setResumeState("preview");
     },
   });
   const inputClasses =
@@ -125,6 +128,28 @@ const ResumeEditor = () => {
                 class={inputClasses}
               />
             </div>
+            <div class="col-span-1">
+              <label for="nationality">Nationality</label>
+              <input
+                id="nationality"
+                name="nationality"
+                type="text"
+                onChange={formik.handleChange}
+                value={formik.values.nationality}
+                class={inputClasses}
+              />
+            </div>
+            <div class="col-span-1">
+              <label for="birthDate">Birth Date</label>
+              <input
+                id="birthDate"
+                name="birthDate"
+                type="text"
+                onChange={formik.handleChange}
+                value={formik.values.birthDate}
+                class={inputClasses}
+              />
+            </div>
             <div class="col-span-3" />
             <div class="col-span-2">
               <label for="summary">Summary</label>
@@ -154,7 +179,27 @@ const ResumeEditor = () => {
             <div class="col-span-4">
               <LanguageHandler formik={formik} />
             </div>
-            <div class="col-span-4 float-right">
+            <div class="col-span-4">
+              <LinkHandler formik={formik} />
+            </div>
+            <div class="col-span-4">
+              <EducationHandler formik={formik} />
+            </div>
+            <div class="col-span-4">
+              <WorkExperienceHandler formik={formik} />
+            </div>
+            {/* <div class="col-span-4">
+              <label for="picture">Picture</label>
+              <input
+                id="picture"
+                name="picture"
+                type="file"
+                onChange={formik.handleChange}
+                value={formik.values.picture}
+                class={inputClasses}
+              />
+            </div> */}
+            <div class="col-span-4 float-right hidden ">
               <button type="submit">Submit</button>
             </div>
           </div>
